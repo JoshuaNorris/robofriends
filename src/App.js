@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import Scroll from "./Scroll";
 import './App.css'
 
 const state = {
@@ -23,6 +24,7 @@ class App extends Component {
             .then(response => response.json())
             .then(users => this.setState({ robots: users }));
     }
+    
 
     onSearchChange = (event) => {
         this.setState({ searchfield: event.target.value });
@@ -39,7 +41,9 @@ class App extends Component {
                 <div className="tc">
                     <h1 className="f1">RoboFriends</h1>
                     <SearchBox searchChange={this.onSearchChange} />
-                    <CardList robots={filteredRobots} />
+                    <Scroll>
+                        <CardList robots={filteredRobots} />
+                    </Scroll>
                 </div>
             )
         }
