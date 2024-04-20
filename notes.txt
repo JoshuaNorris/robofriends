@@ -1,3 +1,7 @@
 Classes vs. Hooks
 	hooks are new and react specific
 
+State - the description of your app
+an object that describes your application
+
+props are just things that come out of state
